@@ -28,7 +28,7 @@ class BenWeeseTest extends GebSpec {
         to BenWeeseDevHome
 
         then:
-        sideMenu.links[2].text().startsWith("Software Testing")
+        sideMenu.links[2].text().startsWith("Webmaster")
 
         when:
         sideMenu.links[2].click()
@@ -42,7 +42,7 @@ class BenWeeseTest extends GebSpec {
         to BenWeeseDevHome
 
         then:
-        sideMenu.links[3].text().startsWith("Software Testing")
+        sideMenu.links[3].text().startsWith("Podcast")
 
         when:
         sideMenu.links[3].click()
@@ -56,7 +56,7 @@ class BenWeeseTest extends GebSpec {
         to BenWeeseDevHome
 
         then:
-        sideMenu.links[4].text().startsWith("Software Testing")
+        sideMenu.links[4].text().startsWith("Computers")
 
         when:
         sideMenu.links[4].click()
@@ -70,7 +70,7 @@ class BenWeeseTest extends GebSpec {
         to BenWeeseDevHome
 
         then:
-        sideMenu.links[5].text().startsWith("Software Testing")
+        sideMenu.links[5].text().startsWith("GitHub")
 
         when:
         sideMenu.links[5].click()
