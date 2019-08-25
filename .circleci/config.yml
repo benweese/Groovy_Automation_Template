@@ -11,11 +11,12 @@ jobs:
       - restore_cache:
           keys:
             - gradle-home
+      - run: google-chrome --version
       - run:
           command: |
             Xvfb :99 -screen 1 1280x1024x16 -nolisten tcp -fbdir /var/run > /dev/null 2>&1 &
             export DISPLAY=:99
-            ./gradlew --no-daemon check
+            ./gradlew chromeHeadless
       - run:
           name: Save test results
           command: |
