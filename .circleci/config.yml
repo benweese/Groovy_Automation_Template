@@ -17,6 +17,13 @@ jobs:
             export DISPLAY=:99
             ./gradlew chromeHeadless
       - run:
+          name: Sonar
+          command: ./gradlew chromeHeadless sonarqube
+                      -Dsonar.projectKey=benweese_Groovy_Automation
+                      -Dsonar.organization=benweese
+                      -Dsonar.host.url=https://sonarcloud.io
+                      -Dsonar.login=e02bf064e7d27f584d65dfe19b0a8791dd962b24
+      - run:
           name: Save test results
           command: |
             mkdir -p ~/test-results/junit/
