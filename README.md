@@ -2,7 +2,7 @@
 This project is for practiceing Groovy, Geb, and Spock. 
 
 ## Badges
-[![CircleCI](https://circleci.com/gh/benweese/Groovy_Automation/tree/master.svg?style=shield)](https://circleci.com/gh/benweese/Groovy_Automation/tree/master) ![GitHub](https://img.shields.io/github/license/benweese/Groovy_Automation.svg) [![Known Vulnerabilities](https://snyk.io/test/github/benweese/Groovy_Automation/badge.svg)](https://snyk.io/test/github/benweese/Groovy_Automation) ![GitHub issues](https://img.shields.io/github/issues-raw/benweese/Groovy_Automation.svg) 
+[![CircleCI](https://circleci.com/gh/benweese/Groovy_Automation/tree/master.svg?style=shield)](https://circleci.com/gh/benweese/Groovy_Automation/tree/master) ![GitHub](https://img.shields.io/github/license/benweese/Groovy_Automation.svg) [![Known Vulnerabilities](https://snyk.io/test/github/benweese/Groovy_Automation/badge.svg)](https://snyk.io/test/github/benweese/Groovy_Automation) ![GitHub issues](https://img.shields.io/github/issues-raw/benweese/Groovy_Automation.svg) [![StackShare](http://img.shields.io/badge/tech-stack-0690fa.svg?style=flat)](https://stackshare.io/benweese/groovy-automation)
 
 ## Motivation
 This is to keep my automations skills sharp.
