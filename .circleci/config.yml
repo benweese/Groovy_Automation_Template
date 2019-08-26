@@ -18,7 +18,7 @@ jobs:
             ./gradlew chromeHeadless
       - run:
           name: Sonar
-          command: ./gradlew chromeHeadless sonarqube
+          command: ./gradlew sonarqube
                       -Dsonar.projectKey=benweese_Groovy_Automation
                       -Dsonar.organization=benweese
                       -Dsonar.host.url=https://sonarcloud.io
