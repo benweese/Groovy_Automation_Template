@@ -11,7 +11,7 @@ jobs:
       - restore_cache:
           keys:
             - gradle-home
-      - run: sudo apt-get --only-upgrade install google-chrome-stable
+      - run: apt-get --only-upgrade install google-chrome-stable
       - run:
           command: |
             Xvfb :99 -screen 1 1280x1024x16 -nolisten tcp -fbdir /var/run > /dev/null 2>&1 &
