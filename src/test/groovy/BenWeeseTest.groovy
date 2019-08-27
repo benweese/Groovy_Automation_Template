@@ -10,12 +10,12 @@ import pages.WebmasterPage
 
 class BenWeeseTest extends GebSpec {
 
-    static Page page = at BenWeeseDevHome
+    static Page page
 
    def "Can get to Software Testing"(){
        when:
        to BenWeeseDevHome
-       page
+       page = at BenWeeseDevHome
 
        then:
        page.sideMenu.links[1].text().startsWith("Software Testing")
@@ -31,7 +31,7 @@ class BenWeeseTest extends GebSpec {
     def "Can get to Webmaster"(){
         when:
         to BenWeeseDevHome
-        page
+        page = at BenWeeseDevHome
 
         then:
         page.sideMenu.links[2].text().startsWith("Webmaster")
@@ -46,7 +46,7 @@ class BenWeeseTest extends GebSpec {
     def "Can get to Podcast"(){
         when:
         to BenWeeseDevHome
-        page
+        page = at BenWeeseDevHome
 
         then:
         page.sideMenu.links[3].text().startsWith("Podcast")
@@ -61,7 +61,7 @@ class BenWeeseTest extends GebSpec {
     def "Can get to Computers"(){
         when:
         to BenWeeseDevHome
-        page
+        page = at BenWeeseDevHome
 
         then:
         page.sideMenu.links[4].text().startsWith("Computers")
@@ -76,7 +76,7 @@ class BenWeeseTest extends GebSpec {
     def "Can get to Github"(){
         when:
         to BenWeeseDevHome
-        page
+        page = at BenWeeseDevHome
 
         then:
         page.sideMenu.links[5].text().startsWith("GitHub")
