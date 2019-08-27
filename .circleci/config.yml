@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: gebish/ci:v7
+      - image: circleci/openjdk:11.0.4-jdk-stretch-node-browsers
     environment:
       GRADLE_OPTS: -Xmx1024m -XX:MaxMetaspaceSize=256m
       GRADLE_USER_HOME: .gradle-home
@@ -11,7 +11,6 @@ jobs:
       - restore_cache:
           keys:
             - gradle-home
-      - run: apt-get --only-upgrade install google-chrome-stable
       - run:
           command: |
             Xvfb :99 -screen 1 1280x1024x16 -nolisten tcp -fbdir /var/run > /dev/null 2>&1 &

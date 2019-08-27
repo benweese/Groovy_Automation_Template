@@ -19,7 +19,6 @@ jobs:
        brew install brew-cask-completion
        brew cask install google-chrome
        brew cleanup
-       google-chrome --version
     - name: Build with Gradle
       run: ./gradlew build
     - name: Run Test
