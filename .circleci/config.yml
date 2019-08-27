@@ -8,9 +8,7 @@ jobs:
       GRADLE_USER_HOME: .gradle-home
     steps:
       - checkout
-      - restore_cache:
-          keys:
-            - gradle-home
+
       - run:
           name: Run test
           command: |
