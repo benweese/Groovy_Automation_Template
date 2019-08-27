@@ -1,3 +1,4 @@
+import geb.Page
 import geb.spock.GebSpec
 import pages.BenWeeseDevHome
 import pages.ComputersPage
@@ -6,17 +7,21 @@ import pages.PodcastPage
 import pages.SoftwareTestingPage
 import pages.WebmasterPage
 
+
 class BenWeeseTest extends GebSpec {
+
+    static Page page = at BenWeeseDevHome
 
    def "Can get to Software Testing"(){
        when:
        to BenWeeseDevHome
+       page
 
        then:
-       sideMenu.links[1].text().startsWith("Software Testing")
+       page.sideMenu.links[1].text().startsWith("Software Testing")
 
        when:
-       sideMenu.links[1].click()
+       page.sideMenu.links[1].click()
 
        then:
        at SoftwareTestingPage
@@ -26,12 +31,13 @@ class BenWeeseTest extends GebSpec {
     def "Can get to Webmaster"(){
         when:
         to BenWeeseDevHome
+        page
 
         then:
-        sideMenu.links[2].text().startsWith("Webmaster")
+        page.sideMenu.links[2].text().startsWith("Webmaster")
 
         when:
-        sideMenu.links[2].click()
+        page.sideMenu.links[2].click()
 
         then:
         at WebmasterPage
@@ -40,12 +46,13 @@ class BenWeeseTest extends GebSpec {
     def "Can get to Podcast"(){
         when:
         to BenWeeseDevHome
+        page
 
         then:
-        sideMenu.links[3].text().startsWith("Podcast")
+        page.sideMenu.links[3].text().startsWith("Podcast")
 
         when:
-        sideMenu.links[3].click()
+        page.sideMenu.links[3].click()
 
         then:
         at PodcastPage
@@ -54,12 +61,13 @@ class BenWeeseTest extends GebSpec {
     def "Can get to Computers"(){
         when:
         to BenWeeseDevHome
+        page
 
         then:
-        sideMenu.links[4].text().startsWith("Computers")
+        page.sideMenu.links[4].text().startsWith("Computers")
 
         when:
-        sideMenu.links[4].click()
+        page.sideMenu.links[4].click()
 
         then:
         at ComputersPage
@@ -68,12 +76,13 @@ class BenWeeseTest extends GebSpec {
     def "Can get to Github"(){
         when:
         to BenWeeseDevHome
+        page
 
         then:
-        sideMenu.links[5].text().startsWith("GitHub")
+        page.sideMenu.links[5].text().startsWith("GitHub")
 
         when:
-        sideMenu.links[5].click()
+        page.sideMenu.links[5].click()
 
         then:
         at GitHubPage
