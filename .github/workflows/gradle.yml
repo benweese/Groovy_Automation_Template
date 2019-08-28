@@ -15,11 +15,11 @@ jobs:
         java-version: 11.0.4
     - name: Install dependencies
       run: |
-       brew update
-       brew install brew-cask-completion
-       brew cask install google-chrome
-       brew cleanup
+        brew update
+        brew install brew-cask-completion
+        brew cask install google-chrome
+        brew cleanup
     - name: Build with Gradle
       run: ./gradlew build
     - name: Run Test
-      run: ./gradlew chromeHeadless
+      run: ./gradlew chromeHeadlessTest
