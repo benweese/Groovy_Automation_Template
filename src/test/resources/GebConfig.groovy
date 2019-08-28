@@ -1,3 +1,5 @@
+import com.aoe.gebspockreports.GebReportingListener
+import io.github.bonigarcia.wdm.ChromeDriverManager
 import org.openqa.selenium.chrome.ChromeDriver
 import org.openqa.selenium.chrome.ChromeOptions
 
@@ -13,29 +15,46 @@ waiting {
 baseNavigatorWaiting = true
 atCheckWaiting = true
 reportOnTestFailureOnly = false
-reportsDir = "target/execution-reports"
+autoClearCookies = false
+reportingListener = new GebReportingListener()
+reportsDir = 'build/geb-spock-reports'
 
-driver = { new ChromeDriver() }
+driver = {
+    ChromeDriverManager.chromedriver().setup()
+    new ChromeDriver()
+}
+
 
 environments {
 
     // run via “./gradlew chromeTest”
     // See: http://code.google.com/p/selenium/wiki/ChromeDriver
     chrome {
-        driver = { new ChromeDriver() }
+        driver = {
+            ChromeOptions chromeOptions = new ChromeOptions()
+            chromeOptions.addArguments("--disable-popup-blocking")
+            chromeOptions.addArguments("--no-sandbox")
+            chromeOptions.addArguments("--disable-gpu")
+            chromeOptions.addArguments("--window-size=1400x1200")
+            chromeOptions.addArguments("--disable-extensions")
+            ChromeDriverManager.chromedriver().setup()
+            new ChromeDriver(chromeOptions)
+        }
     }
 
     // run via “./gradlew chromeHeadlessTest”
     // See: http://code.google.com/p/selenium/wiki/ChromeDriver
     chromeHeadless {
         driver = {
-            ChromeOptions options = new ChromeOptions()
-            options.addArguments('headless')
-            options.addArguments("--no-sandbox")
-            options.addArguments("--disable-gpu")
-            options.addArguments("--window-size=1400x1200")
-            options.addArguments("--disable-extensions")
-            new ChromeDriver(options)
+            ChromeOptions chromeOptions = new ChromeOptions()
+            chromeOptions.addArguments("--disable-popup-blocking")
+            chromeOptions.addArguments("--no-sandbox")
+            chromeOptions.addArguments("--disable-gpu")
+            chromeOptions.addArguments("--window-size=1400x1200")
+            chromeOptions.addArguments("--disable-extensions")
+            chromeOptions.addArguments('headless')
+            ChromeDriverManager.chromedriver().setup()
+            new ChromeDriver(chromeOptions)
         }
     }
 }
