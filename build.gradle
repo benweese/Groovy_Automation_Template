@@ -40,7 +40,7 @@ dependencies {
     testCompile 'com.aoe:geb-spock-reports:0.2.6'
     testCompile ("com.athaydes:spock-reports:1.8.0") { transitive = false }
     testCompile 'org.slf4j:slf4j-api:1.7.30'
-    testCompile 'org.slf4j:slf4j-simple:1.7.30'
+    testCompile 'org.slf4j:slf4j-simple:1.7.32'
     testCompile "org.apache.commons:commons-csv:1.8"
     testCompile "org.gebish:geb-junit4:$gebVersion"
 }
